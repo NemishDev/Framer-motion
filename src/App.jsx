@@ -1,37 +1,54 @@
-import {animate, delay, motion, stagger} from "framer-motion"
-import React from 'react'
+import { motion ,useScroll } from "framer-motion";
+import React from "react"
 
-const App =() =>{
+const App = () => {
 
-  const parentVariants = {
-     visible:{opacity:1, transition:{
-       staggerChildren: 0.2,
-      delayChildren:0.5
-     }},
-     hidden:{opacity:0 } 
-  }
+   const {scrollYProgress}= useScroll()
+   console.log(scrollYProgress);
+  return (
+    <div>
+      <motion.div
+        className="bg-red-500 h-2 w-full fixed origin-left"
+        style={{
+          scaleX:scrollYProgress
+        }}
+        >
 
-  const childVariants={
-    hidden:{y:100, opacity:0},
-    visible:{y:0, opacity:1}
-  }
-  const arr=[10,20,30,50,20,50,20,30,40,40]
-  return(
-    <div className="bg-[#111] p-10 h-screen ">
-     <motion.div 
-     className="h-full flex flex-wrap items-center justify-center text-center bg-slate-900  p-10"
-     variants={parentVariants}
-     initial="hidden"
-     animate="visible"
-     transition={{duration:2,delay:1}}
-     >
-       {arr.map((elem,idx)=>{
-        return  <motion.div variants={childVariants} key={idx} className=" flex justify-center items-center font-bold  bg-red-500 m-4 rounded-2xl h-52 w-52">
-           child{idx +1}
-       </motion.div>
-       })}
-     </motion.div>
+        </motion.div>
+      <div className="h-screen px-80 p-20 text-center bg-[#111] ">
+        <h2 className="font-bold text-4xl font-momo m-5">
+          sheryians coding school
+        </h2>
+        <p className="font-normal text-xl ">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, ex? Corporis ea sunt commodi! Provident expedita, maiores dolor hic, eligendi voluptates ipsa corrupti dolorem ex eos excepturi commodi magnam assumenda ea ullam praesentium a quas laudantium magni incidunt fugit possimus! Voluptas voluptatum sint optio, in perspiciatis error autem ad vero quis esse quaerat pariatur, voluptate corrupti aliquid deserunt quia repellendus. Distinctio a omnis ut iusto vitae, harum dolorem quas! Ad enim omnis dolor sint qui perferendis! Eveniet quis rerum quam. Rem enim provident maxime minus nulla quod delectus. Corporis ipsa iusto doloribus assumenda, vel natus molestias quod cum. Ex, minima.
+        </p>
+      </div>
+           <div className="h-screen px-80 p-20 text-center bg-[#111] ">
+        <h2 className="font-bold text-4xl font-momo m-5">
+          sheryians coding school
+        </h2>
+        <p className="font-normal text-xl ">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, ex? Corporis ea sunt commodi! Provident expedita, maiores dolor hic, eligendi voluptates ipsa corrupti dolorem ex eos excepturi commodi magnam assumenda ea ullam praesentium a quas laudantium magni incidunt fugit possimus! Voluptas voluptatum sint optio, in perspiciatis error autem ad vero quis esse quaerat pariatur, voluptate corrupti aliquid deserunt quia repellendus. Distinctio a omnis ut iusto vitae, harum dolorem quas! Ad enim omnis dolor sint qui perferendis! Eveniet quis rerum quam. Rem enim provident maxime minus nulla quod delectus. Corporis ipsa iusto doloribus assumenda, vel natus molestias quod cum. Ex, minima.
+        </p>
+      </div>
+           <div className="h-screen px-80 p-20 text-center bg-[#111] ">
+        <h2 className="font-bold text-4xl font-momo m-5">
+          sheryians coding school
+        </h2>
+        <p className="font-normal text-xl ">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, ex? Corporis ea sunt commodi! Provident expedita, maiores dolor hic, eligendi voluptates ipsa corrupti dolorem ex eos excepturi commodi magnam assumenda ea ullam praesentium a quas laudantium magni incidunt fugit possimus! Voluptas voluptatum sint optio, in perspiciatis error autem ad vero quis esse quaerat pariatur, voluptate corrupti aliquid deserunt quia repellendus. Distinctio a omnis ut iusto vitae, harum dolorem quas! Ad enim omnis dolor sint qui perferendis! Eveniet quis rerum quam. Rem enim provident maxime minus nulla quod delectus. Corporis ipsa iusto doloribus assumenda, vel natus molestias quod cum. Ex, minima.
+        </p>
+      </div>
+           <div className="h-screen px-80 p-20 text-center bg-[#111] ">
+        <h2 className="font-bold text-4xl font-momo m-5">
+          sheryians coding school
+        </h2>
+        <p className="font-normal text-xl ">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, ex? Corporis ea sunt commodi! Provident expedita, maiores dolor hic, eligendi voluptates ipsa corrupti dolorem ex eos excepturi commodi magnam assumenda ea ullam praesentium a quas laudantium magni incidunt fugit possimus! Voluptas voluptatum sint optio, in perspiciatis error autem ad vero quis esse quaerat pariatur, voluptate corrupti aliquid deserunt quia repellendus. Distinctio a omnis ut iusto vitae, harum dolorem quas! Ad enim omnis dolor sint qui perferendis! Eveniet quis rerum quam. Rem enim provident maxime minus nulla quod delectus. Corporis ipsa iusto doloribus assumenda, vel natus molestias quod cum. Ex, minima.
+        </p>
+      </div>
     </div>
   )
 }
+
 export default App;
